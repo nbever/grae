@@ -4,6 +4,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
+const FaviconPlugin = require('favicons-webpack-plugin');
 
 module.exports = {
   entry: [
@@ -80,11 +81,12 @@ module.exports = {
       filename: 'index.html',
       template: 'index.html.template',
       title: 'James Graeson Books'
-    })
+    }),
+    new FaviconPlugin(path.resolve(__dirname, 'src', 'assets', 'jg.png'))
   ],
   resolve: {
     extensions: ['.js', '.jsx'],
-    alias: { 
+    alias: {
       'react': path.resolve(__dirname, 'node_modules', 'react')
     }
   }

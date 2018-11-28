@@ -4,7 +4,9 @@ import {
   BrowserRouter as Router,
   Route,
   Switch
-} from 'react-router-dom'
+} from 'react-router-dom';
+
+import './fonts/badges/style.scss';
 
 import Welcome from './Welcome';
 
